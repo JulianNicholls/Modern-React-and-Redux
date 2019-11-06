@@ -2,12 +2,12 @@ import React from 'react';
 import { render } from 'react-dom';
 
 class App extends React.Component {
-  state = { position: null };
+  state = { coords: null };
 
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       position => {
-        this.setState({ position });
+        this.setState({ coords: position.coords });
       },
       error => {
         console.error({ error });
@@ -19,15 +19,16 @@ class App extends React.Component {
     return (
       <div>
         Seasons start
-        {this.state.position && (
+        {this.state.coords && (
           <div>
-            <div>Lat: {this.state.position.coords.latitude}</div>
-            <div>Long: {this.state.position.coords.longitude}</div>
-            <div>+- {this.state.position.coords.accuracy}m</div>
+            <div>Lat: {this.state.coords.latitude}</div>
+            <div>Long: {this.state.coords.longitude}</div>
+            <div>+- {this.state.coords.accuracy}m</div>
           </div>
         )}
       </div>
     );
   }
 }
+
 render(<App />, document.getElementById('root'));
