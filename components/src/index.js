@@ -2,54 +2,50 @@ import React from 'react';
 import { render } from 'react-dom';
 import faker from 'faker';
 
+import CommentDetail from './components/CommentDetail';
+import ApprovalCard from './components/ApprovalCard';
+
 const App = () => {
   return (
-    <div className="ui container comments">
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img src={faker.image.avatar()} alt="Avatar" />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 9:16am</span>
-          </div>
-          <div className="text">Nice blog post, dude!</div>
-        </div>
-      </div>
+    <>
+      <header
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          background: '#333',
+          color: '#eee',
+          height: '2rem',
+          marginBottom: '1rem',
+          justifyContent: 'center',
+        }}
+      >
+        Components
+      </header>
+      <div className="ui container comments">
+        <ApprovalCard>
+          <CommentDetail
+            avatar={faker.image.avatar()}
+            author="Sam"
+            date="Today at 9:16am"
+            text="Nice blog post, dude!"
+          />
+        </ApprovalCard>
 
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img src={faker.image.avatar()} alt="Avatar" />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Dave
-          </a>
-          <div className="metadata">
-            <span className="date">Today at 7:21am</span>
-          </div>
-          <div className="text">Hurrah!</div>
-        </div>
-      </div>
+        <CommentDetail
+          avatar={faker.image.avatar()}
+          author="Dave"
+          date="Today at 7:21am"
+          text="Hurrah!!"
+        />
 
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img src={faker.image.avatar()} alt="Avatar" />
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Dee
-          </a>
-          <div className="metadata">
-            <span className="date">Yesterday at 6:00pm</span>
-          </div>
-          <div className="text">Well done!</div>
-        </div>
+        <CommentDetail
+          avatar={faker.image.avatar()}
+          author="Dee"
+          date="Yesterday at 8:14pm"
+          text="Well done!"
+        />
       </div>
-    </div>
+    </>
   );
 };
 
