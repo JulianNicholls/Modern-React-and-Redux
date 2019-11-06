@@ -5,11 +5,7 @@ Code from the Modern React and Redux couse by Stephen Grider at
 
 ## Differences from Stephen
 
-* I will probably be making React functional components with hooks from the start
-of the course, not class based components.
-
-* If Stephen uses cource control, I will be checking my code in much more often than him,
-usually at the end of each lecture.
+...
 
 ### Git client
 
