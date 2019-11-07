@@ -2,12 +2,21 @@ import React from 'react';
 import { render } from 'react-dom';
 
 class App extends React.Component {
-  state = { coords: null, errorMessage: '' };
+  state = {
+    coords: null,
+    errorMessage: '',
+  };
 
   componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
       position => this.setState({ coords: position.coords }),
       error => this.setState({ errorMessage: error.message })
+    );
+  }
+
+  static latLong(value, directions) {
+    return (
+      Math.abs(value).toFixed(4) + (value > 0.0 ? directions[0] : directions[1])
     );
   }
 
@@ -21,8 +30,10 @@ class App extends React.Component {
         {coords && (
           <div className="ui card">
             <div className="content">
-              <div>Lat: {coords.latitude}</div>
-              <div>Long: {coords.longitude}</div>
+              <div>
+                Position: {App.latLong(coords.latitude, 'NS')},{' '}
+                {App.latLong(coords.longitude, 'EW')}
+              </div>
               <div>+- {coords.accuracy}m</div>
             </div>
           </div>
