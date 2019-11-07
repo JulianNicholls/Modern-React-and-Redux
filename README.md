@@ -6,7 +6,7 @@ Code from the Modern React and Redux couse by Stephen Grider at
 
 ## Progress
 
-  88 - Pics app V1, data loading
+  99 - Pics app V1, complete
 
 ## Differences from Stephen
 
