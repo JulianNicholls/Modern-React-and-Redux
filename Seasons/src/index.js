@@ -17,17 +17,20 @@ class App extends React.Component {
   }
 
   render() {
+    const { coords, errorMessage } = this.state;
+
     return (
       <div>
         Seasons
-        {this.state.coords && (
+        {!(coords || errorMessage) && <div>Loading...</div>}
+        {coords && (
           <div>
-            <div>Lat: {this.state.coords.latitude}</div>
-            <div>Long: {this.state.coords.longitude}</div>
-            <div>+- {this.state.coords.accuracy}m</div>
+            <div>Lat: {coords.latitude}</div>
+            <div>Long: {coords.longitude}</div>
+            <div>+- {coords.accuracy}m</div>
           </div>
         )}
-        {this.state.errorMessage && <div>Error: {this.state.errorMessage}</div>}
+        {errorMessage && <div>Error: {errorMessage}</div>}
       </div>
     );
   }
