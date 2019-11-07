@@ -3,11 +3,24 @@
 Code from the Modern React and Redux couse by Stephen Grider at
 [Udemy](https://www.udemy.com/course/react-redux)
 
+
+## Progress
+
+  74 - Handling User Input
+
 ## Differences from Stephen
 
+* My components are in a `src/components` directory.
+
+* My pics application is split into two version directoriws: `PicsV1` and `PicsV2`.
+
 * I usually destructure props, e.g.
-  ```const SeasonDisplay = ({ lat }) => ...``` vs
-  ```const SeasonDisplay = (props) => ...```
+``
+  const SeasonDisplay = ({ lat }) => ...
+ ``` vs
+``
+  const SeasonDisplay = (props) => ...
+```
 
 ### Git client
 
