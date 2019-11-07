@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import SeasonDisplay from './components/SeasonDisplay';
+import Spinner from './components/Spinner';
 
 class App extends React.Component {
   state = {
@@ -27,7 +28,9 @@ class App extends React.Component {
 
     return (
       <div>
-        {!(coords || errorMessage) && <div>Loading...</div>}
+        {!(coords || errorMessage) && (
+          <Spinner message="Please accept the location request" />
+        )}
         {coords && <SeasonDisplay lat={coords.latitude} />}
         {errorMessage && <div>Error: {errorMessage}</div>}
       </div>
