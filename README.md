@@ -6,21 +6,24 @@ Code from the Modern React and Redux couse by Stephen Grider at
 
 ## Progress
 
-  74 - Handling User Input
+  88 - Pics app V1, data loading
 
 ## Differences from Stephen
 
+* My components are functional components with hooks, from lecture 74 onwards.
+
 * My components are in a `src/components` directory.
 
-* My pics application is split into two version directoriws: `PicsV1` and `PicsV2`.
-
 * I usually destructure props, e.g.
-``
+```
   const SeasonDisplay = ({ lat }) => ...
- ``` vs
-``
+``` 
+vs
+```
   const SeasonDisplay = (props) => ...
 ```
+
+* My pics application is split into two version directoriws: `PicsV1` and `PicsV2`.
 
 ### Git client
 
