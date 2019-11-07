@@ -1,6 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+import SeasonDisplay from './components/SeasonDisplay';
+
 class App extends React.Component {
   state = {
     coords: null,
@@ -24,20 +26,9 @@ class App extends React.Component {
     const { coords, errorMessage } = this.state;
 
     return (
-      <div className="ui container">
-        <h1>Seasons</h1>
+      <div>
         {!(coords || errorMessage) && <div>Loading...</div>}
-        {coords && (
-          <div className="ui card">
-            <div className="content">
-              <div>
-                Position: {App.latLong(coords.latitude, 'NS')},{' '}
-                {App.latLong(coords.longitude, 'EW')}
-              </div>
-              <div>+- {coords.accuracy}m</div>
-            </div>
-          </div>
-        )}
+        {coords && <SeasonDisplay lat={coords.latitude} />}
         {errorMessage && <div>Error: {errorMessage}</div>}
       </div>
     );

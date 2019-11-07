@@ -5,7 +5,9 @@ Code from the Modern React and Redux couse by Stephen Grider at
 
 ## Differences from Stephen
 
-...
+* I usually destructure props, e.g.
+  ```const SeasonDisplay = ({ lat }) => ...``` vs
+  ```const SeasonDisplay = (props) => ...```
 
 ### Git client
 
