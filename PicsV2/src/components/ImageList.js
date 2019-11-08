@@ -1,8 +1,10 @@
 import React from 'react';
 
+import './ImageList.css';
+
 const ImageList = ({ images }) => {
   return (
-    <div className="ui segment">
+    <div className="image-list">
       {images.map(({ id, urls, description }) => (
         <img
           className="ui image large spaced"
