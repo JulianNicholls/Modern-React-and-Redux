@@ -23,7 +23,11 @@ vs
   const SeasonDisplay = (props) => ...
 ```
 
-* My pics application is split into two version directoriws: `PicsV1` and `PicsV2`.
+* My pics application is split into two version directories: `PicsV1` and `PicsV2`.
+
+  * I rarely, if ever, use the name `payload` for the data contained in a Redux action.
+    The exception to this is when using `redux-promise` which requires the promised data
+    name to be `payload`.
 
 ### Git client
 
