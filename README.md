@@ -3,10 +3,9 @@
 Code from the Modern React and Redux couse by Stephen Grider at
 [Udemy](https://www.udemy.com/course/react-redux)
 
-
 ## Progress
 
-  99 - Pics app V1, complete
+  107 - Pics app V2, complete
 
 ## Differences from Stephen
 
@@ -14,20 +13,14 @@ Code from the Modern React and Redux couse by Stephen Grider at
 
 * My components are in a `src/components` directory.
 
-* I usually destructure props, e.g.
-```
-  const SeasonDisplay = ({ lat }) => ...
-``` 
-vs
-```
-  const SeasonDisplay = (props) => ...
-```
+* I usually destructure props, e.g. `const SeasonDisplay = ({ lat }) => ...`
+  vs `const SeasonDisplay = (props) => ...`
 
 * My pics application is split into two version directories: `PicsV1` and `PicsV2`.
 
-  * I rarely, if ever, use the name `payload` for the data contained in a Redux action.
-    The exception to this is when using `redux-promise` which requires the promised data
-    name to be `payload`.
+* I rarely, if ever, use the name `payload` for the data contained in a Redux action.
+  The exception to this is when using `redux-promise` which requires the promised data
+  name to be `payload`.
 
 ### Git client
 
