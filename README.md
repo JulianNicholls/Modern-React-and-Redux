@@ -1,11 +1,13 @@
 # Modern-React-and-Redux
 
-Code from the Modern React and Redux couse by Stephen Grider at
+Code from the Modern React and Redux course by Stephen Grider at
 [Udemy](https://www.udemy.com/course/react-redux)
 
 ## Progress
 
   107 - Pics app V2, complete
+
+For now, I have skipped the Youtube browser
 
 ## Differences from Stephen
 
