@@ -5,7 +5,7 @@ Code from the Modern React and Redux course by Stephen Grider at
 
 ## Progress
 
-  107 - Pics app V2, complete
+  139 - Starting first Redux app
 
 For now, I have skipped the Youtube browser
 
@@ -23,6 +23,10 @@ For now, I have skipped the Youtube browser
 * I rarely, if ever, use the name `payload` for the data contained in a Redux action.
   The exception to this is when using `redux-promise` which requires the promised data
   name to be `payload`.
+
+# Pens
+
+[Redux Insurance Example](https://codepen.io/juliannicholls/pen/dyyjVyJ)
 
 ### Git client
 
