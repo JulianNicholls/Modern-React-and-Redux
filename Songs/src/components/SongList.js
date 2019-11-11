@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
-const SongList = ({ songs, selected, selectSong }) => {
-  console.log({ selected });
-
+const SongList = ({ songs, selectSong }) => {
   return (
     <div className="ui divided list">
       {songs.map((song, idx) => (
@@ -27,10 +25,7 @@ const SongList = ({ songs, selected, selectSong }) => {
   );
 };
 
-const mapStateToProps = state => ({
-  songs: state.songs,
-  selected: state.selected,
-});
+const mapStateToProps = ({ songs }) => ({ songs });
 
 export default connect(
   mapStateToProps,
