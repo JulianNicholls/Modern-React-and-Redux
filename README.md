@@ -5,15 +5,13 @@ Code from the Modern React and Redux course by Stephen Grider at
 
 ## Progress
 
-  145 - First Redux app
-
-For now, I have skipped the Youtube browser
+I have completed the first Redux app at episode 145, and I am now circling back to the Youtube app.
 
 ## Differences from Stephen
 
-* My components are functional components with hooks, from lecture 74 onwards.
+* My components are all functional components with hooks, from lecture 74 onwards.
 
-* My components are in a `src/components` directory.
+* My components are all in a `src/components` directory. Stephen starts to do this after a while too.
 
 * I usually destructure props, e.g. `const SeasonDisplay = ({ lat }) => ...`
   vs `const SeasonDisplay = (props) => ...`
