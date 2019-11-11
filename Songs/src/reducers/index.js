@@ -1,6 +1,8 @@
-import { SELECT_SONG } from '../actions/ty';
+import { combineReducers } from 'redux';
 
-const songlist = [
+import { SELECT_SONG } from '../actions/types';
+
+const songlist = () => [
   { title: 'Smells Like Teen Spirit', duration: '4:05' },
   { title: 'Macarena', duration: '3:15' },
   { title: 'I Want It That Way', duration: '4:21' },
@@ -17,3 +19,8 @@ const selection = (selected = null, action) => {
       return selected;
   }
 };
+
+export default combineReducers({
+  songs: songlist,
+  selected: selection,
+});
