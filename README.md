@@ -5,7 +5,7 @@ Code from the Modern React and Redux course by Stephen Grider at
 
 ## Progress
 
-  139 - Starting first Redux app
+  145 - First Redux app
 
 For now, I have skipped the Youtube browser
 
