@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import SearchBar from './SearchBar';
 import youtube from '../apis/youtube';
@@ -13,8 +13,12 @@ const App = () => {
     const response = await youtube.get('/search', { params: { q: term } });
 
     setVideos(response.data.items);
-    setSelected(null);
+    setSelected(response.data.items[0]);
   };
+
+  useEffect(() => {
+    startSearch('buildings');
+  }, []);
 
   return (
     <div className="ui container">
