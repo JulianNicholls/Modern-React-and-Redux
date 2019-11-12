@@ -13,6 +13,7 @@ const App = () => {
     const response = await youtube.get('/search', { params: { q: term } });
 
     setVideos(response.data.items);
+    setSelected(null);
   };
 
   return (
@@ -20,10 +21,10 @@ const App = () => {
       <SearchBar onTermSubmit={startSearch} />
       <div className="ui grid">
         <div className="ui row">
-          <div className="column ten wide">
+          <div className="column eleven wide">
             <VideoDetail video={selected} />
           </div>
-          <div className="column six wide">
+          <div className="column five wide">
             <VideoList
               videos={videos}
               onVideoSelect={video => setSelected(video)}

@@ -5,7 +5,7 @@ Code from the Modern React and Redux course by Stephen Grider at
 
 ## Progress
 
-I have completed the first Redux app at episode 145, and I am now returning to the Youtube app.
+  155 - Async Actions with Redux
 
 ## Differences from Stephen
 
