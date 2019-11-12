@@ -1,0 +1,10 @@
+/* This selec6tor has to be quite specific to achieve its aim */
+.video-list .item.video-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.item.video-item img {
+  max-width: 180px;
+}
