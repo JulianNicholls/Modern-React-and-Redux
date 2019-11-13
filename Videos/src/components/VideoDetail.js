@@ -1,7 +1,7 @@
 import React from 'react';
 
 const VideoDetail = ({ video }) => {
-  if (!video) return null;
+  if (!video) return <h2 class="ui segment">Loading...</h2>;
 
   return (
     <div>
