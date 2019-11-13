@@ -4,11 +4,11 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import UserHeader from './UserHeader';
 
-const PostList = ({ fetchPosts, posts }) => {
+const PostList = ({ fetchPostsAndUsers, posts }) => {
   useEffect(() => {
     console.log('Loading Posts in PostList');
-    fetchPosts();
-  }, [fetchPosts]);
+    fetchPostsAndUsers();
+  }, [fetchPostsAndUsers]);
 
   const renderList = () => {
     return posts.map(post => (
