@@ -22,6 +22,20 @@ Code from the Modern React and Redux course by Stephen Grider at
   The exception to this is when using `redux-promise` which requires the promised data
   name to be `payload`.
 
+* I always create a set of 'types' for the action creators, this avoids any possibility of 
+  typos between action creators and reducers, e.g.
+
+``` 
+dispatch({ type: 'LOAD_POSTS', posts });
+...
+
+
+const postsReducer = (posts, action) => {
+  switch (action.type) {
+    case 'LAOD_POSTS':    // Oops, should be 'LOAD_POSTS'
+      ...
+```
+
 # Pens
 
 [Redux Insurance Example](https://codepen.io/juliannicholls/pen/dyyjVyJ)
