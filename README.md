@@ -5,7 +5,7 @@ Code from the Modern React and Redux course by Stephen Grider at
 
 ## Progress
 
-  155 - Async Actions with Redux
+  191 - Complete Blog App
 
 ## Differences from Stephen
 
@@ -28,7 +28,6 @@ Code from the Modern React and Redux course by Stephen Grider at
 ``` 
 dispatch({ type: 'LOAD_POSTS', posts });
 ...
-
 
 const postsReducer = (posts, action) => {
   switch (action.type) {
