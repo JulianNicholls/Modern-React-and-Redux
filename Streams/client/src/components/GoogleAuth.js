@@ -16,13 +16,10 @@ const GoogleAuth = () => {
           })
           .then(() => {
             auth.current = gApi.auth2.getAuthInstance();
-            const isi = auth.current.isSignedIn;
 
-            setIsSignedIn(isi.get());
+            authChanged();
 
-            isi.listen(authChanged);
-
-            // auth.signIn();
+            auth.current.isSignedIn.listen(authChanged);
           });
       });
     }
