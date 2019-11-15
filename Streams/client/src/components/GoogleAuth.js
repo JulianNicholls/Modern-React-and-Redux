@@ -1,13 +1,20 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { connect } from 'react-redux';
 
-const GoogleAuth = () => {
-  const auth = useRef(null);
-  const [isSignedIn, setIsSignedIn] = useState(null);
+import * as actions from '../actions';
+
+const GoogleAuth = ({ auth, authLogin, authLogout }) => {
+  const gAuth = useRef(null);
+
+  const authChanged = isLoggedIn => {
+    if (isLoggedIn) authLogin();
+    else authLogout();
+  };
 
   useEffect(() => {
     const gApi = window.gapi;
 
-    if (!auth.current) {
+    if (!gAuth.current) {
       gApi.load('client:auth2', () => {
         gApi.client
           .init({
@@ -15,28 +22,24 @@ const GoogleAuth = () => {
             scope: 'email',
           })
           .then(() => {
-            auth.current = gApi.auth2.getAuthInstance();
+            gAuth.current = gApi.auth2.getAuthInstance();
 
-            authChanged();
+            authChanged(gAuth.current.isSignedIn.get());
 
-            auth.current.isSignedIn.listen(authChanged);
+            gAuth.current.isSignedIn.listen(authChanged);
           });
       });
     }
-  }, []);
-
-  const authChanged = () => {
-    setIsSignedIn(auth.current.isSignedIn.get());
-  };
+  });
 
   const renderAuthButton = () => {
-    if (isSignedIn === null) return null;
+    if (auth.isLoggedIn === null) return null;
 
-    if (isSignedIn)
+    if (auth.isLoggedIn)
       return (
         <button
           className="ui red google button"
-          onClick={() => auth.current.signOut()}
+          onClick={() => gAuth.current.signOut()}
         >
           <i className="google icon" />
           Log out
@@ -46,7 +49,7 @@ const GoogleAuth = () => {
     return (
       <button
         className="ui red google button"
-        onClick={() => auth.current.signIn()}
+        onClick={() => gAuth.current.signIn()}
       >
         <i className="google icon" />
         Log in with Google
@@ -57,4 +60,6 @@ const GoogleAuth = () => {
   return <div className="item">{renderAuthButton()}</div>;
 };
 
-export default GoogleAuth;
+const mapStateToProps = ({ auth }) => ({ auth });
+
+export default connect(mapStateToProps, actions)(GoogleAuth);

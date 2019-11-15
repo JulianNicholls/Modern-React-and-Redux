@@ -35,6 +35,9 @@ const postsReducer = (posts, action) => {
       ...
 ```
 
+* I always use the terms 'log in' and 'log out', to make a contrast with 'sign up'.
+  There is no signup here, but I have continued to do this.
+
 ## Pens
 
 [Redux Insurance Example](https://codepen.io/juliannicholls/pen/dyyjVyJ)
