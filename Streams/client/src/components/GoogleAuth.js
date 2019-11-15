@@ -7,7 +7,7 @@ const GoogleAuth = ({ isLoggedIn, authLogin, authLogout }) => {
   const gAuth = useRef(null);
 
   const authChanged = isLoggedIn => {
-    if (isLoggedIn) authLogin();
+    if (isLoggedIn) authLogin(gAuth.current.currentUser.get().getId());
     else authLogout();
   };
 
