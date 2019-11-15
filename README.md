@@ -5,7 +5,7 @@ Code from the Modern React and Redux course by Stephen Grider at
 
 ## Progress
 
-  191 - Complete Blog App
+  216 - Working on Streams app
 
 ## Differences from Stephen
 
@@ -35,7 +35,7 @@ const postsReducer = (posts, action) => {
       ...
 ```
 
-# Pens
+## Pens
 
 [Redux Insurance Example](https://codepen.io/juliannicholls/pen/dyyjVyJ)
 
