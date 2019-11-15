@@ -34,6 +34,7 @@ const postsReducer = (posts, action) => {
     case 'LAOD_POSTS':    // Oops, should be 'LOAD_POSTS'
       ...
 ```
+  Stephen highlights this in lecture 221.
 
 * I always use the terms 'log in' and 'log out', to make a contrast with 'sign up'.
   There is no signup here, but I have continued to do this.

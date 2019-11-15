@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import * as actions from '../actions';
 
-const GoogleAuth = ({ auth, authLogin, authLogout }) => {
+const GoogleAuth = ({ isLoggedIn, authLogin, authLogout }) => {
   const gAuth = useRef(null);
 
   const authChanged = isLoggedIn => {
@@ -23,36 +23,37 @@ const GoogleAuth = ({ auth, authLogin, authLogout }) => {
           })
           .then(() => {
             gAuth.current = gApi.auth2.getAuthInstance();
+            const isi = gAuth.current.isSignedIn;
 
-            authChanged(gAuth.current.isSignedIn.get());
+            authChanged(isi.get());
 
-            gAuth.current.isSignedIn.listen(authChanged);
+            isi.listen(authChanged);
           });
       });
     }
   });
 
   const renderAuthButton = () => {
-    if (auth.isLoggedIn === null) return null;
+    if (isLoggedIn === null)
+      return <button className="ui loading button">Loading</button>;
 
-    if (auth.isLoggedIn)
+    if (isLoggedIn)
       return (
         <button
-          className="ui red google button"
+          className="ui small red button"
           onClick={() => gAuth.current.signOut()}
         >
-          <i className="google icon" />
           Log out
         </button>
       );
 
     return (
       <button
-        className="ui red google button"
+        className="ui small red labeled icon button"
         onClick={() => gAuth.current.signIn()}
       >
         <i className="google icon" />
-        Log in with Google
+        Log in
       </button>
     );
   };
@@ -60,6 +61,6 @@ const GoogleAuth = ({ auth, authLogin, authLogout }) => {
   return <div className="item">{renderAuthButton()}</div>;
 };
 
-const mapStateToProps = ({ auth }) => ({ auth });
+const mapStateToProps = ({ auth }) => ({ isLoggedIn: auth.isLoggedIn });
 
 export default connect(mapStateToProps, actions)(GoogleAuth);
