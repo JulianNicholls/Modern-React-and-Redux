@@ -9,6 +9,7 @@ import {
 } from './types';
 
 import streams from '../apis/streams';
+import history from '../history';
 
 // Auth
 export const authLogin = userId => {
@@ -32,6 +33,7 @@ export const createStream = formValues => async (dispatch, getState) => {
   const response = await streams.post('/streams', { ...formValues, userId });
 
   dispatch({ type: CREATE_STREAM, stream: response.data });
+  history.push('/');
 };
 
 export const getStream = id => async dispatch => {

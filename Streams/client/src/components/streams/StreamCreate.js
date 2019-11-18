@@ -6,8 +6,6 @@ import * as actions from '../../actions';
 
 const StreamCreate = ({ handleSubmit, createStream }) => {
   const onSubmit = formValues => {
-    console.log({ formValues });
-
     createStream(formValues);
   };
 
