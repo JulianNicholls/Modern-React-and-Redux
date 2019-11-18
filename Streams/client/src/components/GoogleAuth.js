@@ -35,12 +35,12 @@ const GoogleAuth = ({ isLoggedIn, authLogin, authLogout }) => {
 
   const renderAuthButton = () => {
     if (isLoggedIn === null)
-      return <button className="ui loading button">Loading</button>;
+      return <button className="ui tiny loading button">Loading</button>;
 
     if (isLoggedIn)
       return (
         <button
-          className="ui small red button"
+          className="ui tiny blue button"
           onClick={() => gAuth.current.signOut()}
         >
           Log out
@@ -49,7 +49,7 @@ const GoogleAuth = ({ isLoggedIn, authLogin, authLogout }) => {
 
     return (
       <button
-        className="ui small red labeled icon button"
+        className="ui tiny red labeled icon button"
         onClick={() => gAuth.current.signIn()}
       >
         <i className="google icon" />
