@@ -1,23 +1,31 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-const StreamCreate = ({ handleSubmit }) => {
-  const renderInput = ({ input, label, meta: { touched, error } }) => {
-    return (
-      <div className="field">
-        <label htmlFor={input.name}>{label}</label>
-        <input {...input} />
-        {touched && <div>{error}</div>}
-      </div>
-    );
-  };
+// This is moved outside of the StreamCreate component, // because it was
+// being recreated on each render, losing focus after the first character.
 
+const renderInput = ({ input, label, meta: { touched, error } }) => {
+  const classname = `field ${touched && error ? 'error' : ''}`;
+  return (
+    <div className={classname}>
+      <label htmlFor={input.name}>{label}</label>
+      <input id={input.name} {...input} autoComplete="off" />
+      {touched && (
+        <div className="ui error message">
+          <div className="header">{error}</div>
+        </div>
+      )}
+    </div>
+  );
+};
+
+const StreamCreate = ({ handleSubmit }) => {
   const onSubmit = formValues => {
     console.log({ formValues });
   };
 
   return (
-    <form className="ui form" onSubmit={handleSubmit(onSubmit)}>
+    <form className="ui form error" onSubmit={handleSubmit(onSubmit)}>
       <Field name="title" component={renderInput} label="Title" />
       <Field name="description" component={renderInput} label="Description" />
 
