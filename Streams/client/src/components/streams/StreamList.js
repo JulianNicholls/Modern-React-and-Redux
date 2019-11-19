@@ -15,12 +15,14 @@ const StreamList = ({ isLoggedIn, currentUserId, streams, loadStreams }) => {
     return (
       <div className="right floated content">
         <Link to={`/streams/edit/${stream.id}`} className="ui button tiny primary">
+          <i className="edit icon"></i>
           Edit
         </Link>
         <Link
           to={`/streams/delete/${stream.id}`}
           className="ui button tiny negative"
         >
+          <i className="trash alternate outline icon"></i>
           Delete
         </Link>
       </div>
