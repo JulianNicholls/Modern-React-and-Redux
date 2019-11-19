@@ -46,7 +46,7 @@ const StreamList = ({ isLoggedIn, currentUserId, streams, loadStreams }) => {
     if (isLoggedIn)
       return (
         <div style={{ textAlign: 'right' }}>
-          <Link to="/streams/new" className="ui tiny button primary">
+          <Link to="/streams/new" className="ui small button primary">
             Create stream
           </Link>
         </div>

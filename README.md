@@ -5,7 +5,7 @@ Code from the Modern React and Redux course by Stephen Grider at
 
 ## Progress
 
-  237 - Beginning streams server
+  282 - Beginning streaming
 
 ## Differences from Stephen
 
