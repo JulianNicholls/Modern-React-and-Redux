@@ -4,10 +4,8 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import StreamForm from './StreamForm';
 
-const StreamCreate = ({ handleSubmit, createStream }) => {
-  const onSubmit = formValues => {
-    createStream(formValues);
-  };
+const StreamCreate = ({ createStream }) => {
+  const onSubmit = formValues => createStream(formValues);
 
   return (
     <div>
