@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import * as actions from '../../actions';
 import StreamForm from './StreamForm';
 
+// Because I pass the whole stream into the StreamForm, I get it back again,
+// which means that a PUT works, but I have changed it to PATCH anyway.
+
 const StreamEdit = ({ match, stream, getStream, updateStream }) => {
   useEffect(() => {
     getStream(match.params.id);
@@ -21,7 +24,7 @@ const StreamEdit = ({ match, stream, getStream, updateStream }) => {
           initialValues={stream}
         />
       ) : (
-        <h3>Stream {match.params.id} not found</h3>
+        <p>Stream {match.params.id} not found</p>
       )}
     </div>
   );
