@@ -39,6 +39,9 @@ const postsReducer = (posts, action) => {
 * I always use the terms 'log in' and 'log out', to make a contrast with 'sign up'.
   There is no signup here, but I have continued to do this.
 
+* My `fetchStream` and `fetchStteams` are called `getStreams` and `loadStreams` respectively.
+  Much less confusing, n'est ce pas? :-)
+
 ## Pens
 
 [Redux Insurance Example](https://codepen.io/juliannicholls/pen/dyyjVyJ)
