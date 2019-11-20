@@ -15,7 +15,7 @@ const StreamDelete = ({ match, stream, getStream, deleteStream }) => {
 
   const onDelete = () => deleteStream(stream.id);
 
-  const actions = (
+  const renderActions = () => (
     <>
       <button onClick={onDelete} className="ui button negative">
         <i className="trash alternate outline icon"></i>
@@ -37,7 +37,7 @@ const StreamDelete = ({ match, stream, getStream, deleteStream }) => {
     <Modal
       header="Delete Stream"
       content={renderContent()}
-      actions={actions}
+      actions={renderActions()}
       onDismiss={onDismiss}
     />
   );
