@@ -1,6 +1,7 @@
 import React from 'react';
 
 import LanguageContext from '../context/language';
+import ColourContext from '../context/colour';
 
 const submits = {
   english: 'Submit',
@@ -10,9 +11,15 @@ const submits = {
 
 const Button = () => {
   return (
-    <LanguageContext.Consumer>
-      {value => <button className="ui button primary">{submits[value]}</button>}
-    </LanguageContext.Consumer>
+    <ColourContext.Consumer>
+      {colour => (
+        <button className={`ui button ${colour}`}>
+          <LanguageContext.Consumer>
+            {language => submits[language]}
+          </LanguageContext.Consumer>
+        </button>
+      )}
+    </ColourContext.Consumer>
   );
 };
 

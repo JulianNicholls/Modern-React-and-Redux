@@ -5,13 +5,14 @@ Code from the Modern React and Redux course by Stephen Grider at
 
 ## Progress
 
-  296 - Beginning Context
+  307 - Beginning section 24 - Replacing Redux with Context
 
 ## Differences from Stephen
 
 * My components are all functional components with hooks, from lecture 74 onwards.
 
-* My components are all in a `src/components` directory. Stephen starts to do this after a while too.
+* My components are all in a `src/components` directory. Stephen starts to do 
+  this after a while too.
 
 * I usually destructure props, e.g. `const SeasonDisplay = ({ lat }) => ...`
   vs `const SeasonDisplay = (props) => ...`
@@ -19,11 +20,11 @@ Code from the Modern React and Redux course by Stephen Grider at
 * My pics application is split into two version directories: `PicsV1` and `PicsV2`.
 
 * I rarely, if ever, use the name `payload` for the data contained in a Redux action.
-  The exception to this is when using `redux-promise` which requires the promised data
-  name to be `payload`.
+  The exception to this is when using `redux-promise` which requires that 
+  the promised data name has to be `payload`.
 
-* I always create a set of 'types' for the action creators, this avoids any possibility of 
-  typos between action creators and reducers, e.g.
+* I always create a set of 'types' for the action creators, this avoids any 
+  possibility of typos between action creators and reducers, e.g.
 
 ``` 
 dispatch({ type: 'LOAD_POSTS', posts });
@@ -39,8 +40,18 @@ const postsReducer = (posts, action) => {
 * I always use the terms 'log in' and 'log out', to make a contrast with 'sign up'.
   There is no signup here, but I have continued to do this.
 
-* My `fetchStream` and `fetchStteams` are called `getStreams` and `loadStreams` respectively.
-  Much less confusing, n'est ce pas? :-)
+* My `fetchStream` and `fetchStteams` are called `getStreams` and `loadStreams`
+  respectively. Much less confusing, n'est ce pas? :-)
+
+## Section 23 - Context
+
+Stephen doesn't seem to have the slightest clue how to use context properly, 
+it's no wonder he thinks it's confusing.
+
+Context should be storing the value(s) themselves and the provider should 
+be under the control of the Context, not another component.
+
+See my X app from section 24 for more.
 
 ## Pens
 
