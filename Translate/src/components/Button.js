@@ -8,12 +8,12 @@ const submits = {
   german: 'Senden',
 };
 
-class Button extends React.Component {
-  static contextType = LanguageContext;
-
-  render() {
-    return <button className="ui button primary">{submits[this.context]}</button>;
-  }
-}
+const Button = () => {
+  return (
+    <LanguageContext.Consumer>
+      {value => <button className="ui button primary">{submits[value]}</button>}
+    </LanguageContext.Consumer>
+  );
+};
 
 export default Button;
