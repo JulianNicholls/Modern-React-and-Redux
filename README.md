@@ -43,17 +43,13 @@ const postsReducer = (posts, action) => {
 * My `fetchStream` and `fetchStreams` are called `getStream` and `loadStreams`
   respectively. Much less confusing, n'est ce pas? :-)
 
-* I have split my Translate app into two from sections 23 & 24.
+* I have split my Translate app into `TranslateV1` from section 23 and 
+  `TranslateV2` from section 24. In addition, I have made a third version `TranslateHooks`.
 
 ## Section 23 - Context
 
-Judging from this section, Stephen doesn't seem to have the slightest clue 
-how to use context properly, it's no wonder he thinks it's confusing.
-
-Context should be storing the value(s) themselves and the provider should 
-be under the control of the Context, not another component. Much more like 
-Redux, but perhaps with separate contexts rather than a monolithic 
-multi-section store.
+It is a pity that Stephen shows the wrong way to use context in this section,
+before showing the correct way in the next section.
 
 ## Pens
 
