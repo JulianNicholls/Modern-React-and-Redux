@@ -40,18 +40,20 @@ const postsReducer = (posts, action) => {
 * I always use the terms 'log in' and 'log out', to make a contrast with 'sign up'.
   There is no signup here, but I have continued to do this.
 
-* My `fetchStream` and `fetchStteams` are called `getStreams` and `loadStreams`
+* My `fetchStream` and `fetchStreams` are called `getStream` and `loadStreams`
   respectively. Much less confusing, n'est ce pas? :-)
+
+* I have split my Translate app into two from sections 23 & 24.
 
 ## Section 23 - Context
 
-Stephen doesn't seem to have the slightest clue how to use context properly, 
-it's no wonder he thinks it's confusing.
+Judging from this section, Stephen doesn't seem to have the slightest clue 
+how to use context properly, it's no wonder he thinks it's confusing.
 
 Context should be storing the value(s) themselves and the provider should 
-be under the control of the Context, not another component.
-
-See my X app from section 24 for more.
+be under the control of the Context, not another component. Much more like 
+Redux, but perhaps with separate contexts rather than a monolithic 
+multi-section store.
 
 ## Pens
 

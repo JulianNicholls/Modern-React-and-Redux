@@ -32,6 +32,7 @@ const App = () => {
         <div style={blobStyle('blue')} onClick={() => setColour('blue')} />
         <div style={blobStyle('green')} onClick={() => setColour('green')} />
       </div>
+      {/* This is SO the wrong way to do it! See README. */}
       <ColourContext.Provider value={colour}>
         <LanguageContext.Provider value={language}>
           <UserCreate />

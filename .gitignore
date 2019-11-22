@@ -65,3 +65,4 @@ typings/
 .next
 unsplash.json
 db.json
+*.swp
