@@ -14,7 +14,7 @@ class Field extends React.Component {
   render() {
     return (
       <div className="ui field">
-        <label htmlFor="name">{names[this.context]}</label>
+        <label htmlFor="name">{names[this.context.language]}</label>
         <input id="name" type="text" />
       </div>
     );

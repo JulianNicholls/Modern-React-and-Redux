@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
+import LanguageSelector from './LanguageSelector';
 import UserCreate from './UserCreate';
-import LanguageContext from '../context/language';
+import { LanguageStore } from '../context/language';
 import ColourContext from '../context/colour';
 
 const blobStyle = colour => ({
@@ -13,30 +14,24 @@ const blobStyle = colour => ({
 });
 
 const App = () => {
-  const [language, setLanguage] = useState('french');
   const [colour, setColour] = useState('blue');
 
   return (
     <div className="ui container">
-      <div style={{ margin: '1rem 0 0.5rem 0' }}>
-        Language:{' '}
-        <span className="select-language">
-          <i className="flag gb uk" onClick={() => setLanguage('english')} />
-          <i className="flag france" onClick={() => setLanguage('french')} />
-          <i className="flag germany" onClick={() => setLanguage('german')} />
-        </span>
-      </div>
-      <div style={{ marginBottom: '1rem' }}>
-        Colour:
-        <div style={blobStyle('red')} onClick={() => setColour('red')} />
-        <div style={blobStyle('blue')} onClick={() => setColour('blue')} />
-        <div style={blobStyle('green')} onClick={() => setColour('green')} />
-      </div>
-      <ColourContext.Provider value={colour}>
-        <LanguageContext.Provider value={language}>
+      <LanguageStore>
+        <LanguageSelector />
+
+        <div style={{ marginBottom: '1rem' }}>
+          Colour:
+          <div style={blobStyle('red')} onClick={() => setColour('red')} />
+          <div style={blobStyle('blue')} onClick={() => setColour('blue')} />
+          <div style={blobStyle('green')} onClick={() => setColour('green')} />
+        </div>
+
+        <ColourContext.Provider value={colour}>
           <UserCreate />
-        </LanguageContext.Provider>
-      </ColourContext.Provider>
+        </ColourContext.Provider>
+      </LanguageStore>
     </div>
   );
 };

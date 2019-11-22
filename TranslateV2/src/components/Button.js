@@ -15,7 +15,7 @@ const Button = () => {
       {colour => (
         <button className={`ui button ${colour}`}>
           <LanguageContext.Consumer>
-            {language => submits[language]}
+            {({ language }) => submits[language]}
           </LanguageContext.Consumer>
         </button>
       )}
