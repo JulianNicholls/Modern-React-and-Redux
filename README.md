@@ -5,7 +5,7 @@ Code from the Modern React and Redux course by Stephen Grider at
 
 ## Progress
 
-  307 - Beginning section 24 - Replacing Redux with Context
+  330 - More fun with hooks
 
 ## Differences from Stephen
 
