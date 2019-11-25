@@ -13,9 +13,10 @@ const seasonConfig = {
   },
 };
 // Latitude and 1-BASED month
-// April => September is considered northern summer and vice versa.
+// April -> September is considered Northern summer and vice versa.
 const getSeason = (lat, month) => {
   if (lat >= 0.0) {
+    // Global North
     return month >= 4 && month <= 9 ? 'summer' : 'winter';
   }
 
