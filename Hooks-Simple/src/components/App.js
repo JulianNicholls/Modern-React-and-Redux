@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import ResourceList from './ResourceList';
+
 const App = () => {
   const [resource, setResource] = useState('posts');
 
@@ -7,9 +9,9 @@ const App = () => {
     <div className="ui container">
       <div>
         <button onClick={() => setResource('posts')}>Posts</button>
-        <button onClick={() => setResource('tasks')}>Tasks</button>
+        <button onClick={() => setResource('todos')}>Tasks</button>
       </div>
-      <h2 style={{ textAlign: 'center' }}>{resource}</h2>
+      <ResourceList resource={resource} />
     </div>
   );
 };
