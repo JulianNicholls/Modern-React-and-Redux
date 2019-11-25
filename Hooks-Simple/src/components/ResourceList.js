@@ -7,7 +7,7 @@ const ResourceList = ({ resource }) => {
 
   return (
     <div>
-      <h2>{resource}</h2>
+      <h2 style={{ textAlign: 'center' }}>{resource}</h2>
       <ul>
         {resources.map(item => (
           <li key={item.id}>{item.title}</li>
