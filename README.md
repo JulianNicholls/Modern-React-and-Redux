@@ -5,7 +5,7 @@ Code from the Modern React and Redux course by Stephen Grider at
 
 ## Progress
 
-  330 - More fun with hooks
+  Completed 2019 update sections
 
 ## Differences from Stephen
 
