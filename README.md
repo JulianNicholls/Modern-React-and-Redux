@@ -57,7 +57,7 @@ before showing the correct way in the next section.
 
 ### Git client
 
-I have used Git at the command-line for imore than 10 years. Over that time, I have tried
+I have used Git at the command-line for more than 10 years. Over that time, I have tried
 many different graphical shells for Git, without finding one that was easier
 and nicer to use than the command-line (in my view).
 
